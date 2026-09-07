@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：Skill（技能）</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .analogy,.example,.pitfall{border-radius:8px;padding:12px 18px;margin:1em 0}
+  .analogy{background:#fff8e6;border:1px solid #f0d890}
+  .example{background:#eefaf0;border:1px solid #9fd8a8}
+  .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  pre{background:#f0f2f5;border-radius:8px;padding:14px 16px;overflow-x:auto;font-size:.88em;line-height:1.5}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+  code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<h1><span class="tag">概念详解</span>Skill（技能）</h1>
+<div class="summary"><strong>一句话摘要：</strong>Skill 是把"完成某类任务的方法论"写成结构化文档（如 SKILL.md），存放在约定目录里，让 AI 助手在遇到相关任务时自动加载并照着执行——本质上是给 AI 装上可复用的"操作手册"。</div>
+
+<h2>定义</h2>
+<p><strong>Skill</strong> 是一种"知识打包"机制：将某个任务的最佳实践——触发条件、工作步骤、输出规范、注意事项——写成一份带元数据（name、description）的说明文档，放在 AI 助手约定的技能目录（如 <code>.workbuddy/skills/</code>）下。当用户的请求匹配技能描述时，助手会先读取这份文档，再按其中的流程执行，从而稳定地复现高质量的工作方式。</p>
+
+<h2>SKILL.md 的典型结构</h2>
+<pre>---
+name: my-skill          # 技能名称
+description: 何时触发、做什么  # 助手据此判断是否加载
+---
+# 技能标题
+## 目的 / 触发条件        # 什么时候用
+## 工作流程               # 分步骤怎么做
+## 输出规范               # 产物的格式与质量要求
+## 边界                   # 不做什么</pre>
+
+<h2>生活化类比</h2>
+<div class="analogy">💭 <strong>类比：</strong>Skill 就像交给新员工的<strong>SOP 手册（标准作业程序）</strong>。没有手册时，新员工每次做事全凭临场发挥、质量忽高忽低；有了手册，"财务报销""周报撰写"都按固定流程执行，谁来做得都一样好。</div>
+
+<h2>例子</h2>
+<div class="example">📝 <strong>例子：</strong>本仓库的 <code>concept-learning-materials</code> 技能就是一例：它规定"当用户要学习某概念时，按四步生成 4 个互相链接的 HTML 页面"。以后你只需说"帮我搞懂 Transformer"，助手就会按既定规范产出统一格式的学习资料——这就是技能带来的确定性和复用性。</div>
+
+<h2>常见误区</h2>
+<div class="pitfall">⚠️ <strong>误区一：Skill 等于提示词。</strong>提示词是单次对话的临时指令；Skill 是持久化、可版本管理、可分享的方法论资产。<br>⚠️ <strong>误区二：写得越多越好。</strong>技能文档应精炼、可执行——模糊冗长的描述反而让助手无所适从。</div>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>Skill = 写给 AI 的 SOP 手册。</strong>把"我知道怎么做"变成"AI 照着就能做对"，且一次编写、处处复用。</div>
+
+<nav>
+  本概念系列：
+  <a href="agent.html">Agent 详解</a>
+  <a href="llm-context.html">LLM 上下文</a>
+  <a href="skill.html">Skill</a>
+  <a href="concept-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>
