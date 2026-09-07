@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：Agent · LLM 上下文 · Skill 的关系</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:820px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  .map{background:#fafbfc;border:1px solid #dde4ee;border-radius:12px;padding:10px;margin:1.2em 0}
+  table{border-collapse:collapse;width:100%;margin:1em 0;font-size:.95em}
+  th,td{border:1px solid #c9d4e5;padding:8px 12px;text-align:left}
+  th{background:#eef3fa;color:#2c4a7c}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+</style>
+</head>
+<body>
+<h1><span class="tag">概念关系图</span>Agent · LLM 上下文 · Skill</h1>
+<div class="summary"><strong>一句话摘要：</strong>LLM 上下文是底层资源（模型知道什么），Skill 是结构化的经验注入方式（把方法放进上下文），Agent 是运行时系统（利用上下文和技能自主完成任务）——三者构成"资源 → 方法 → 执行"的层级关系。</div>
+
+<h2>概念地图</h2>
+<div class="map">
+<svg viewBox="0 0 760 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="概念关系图">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#8a97ab"/>
+    </marker>
+  </defs>
+  <!-- edges -->
+  <line x1="380" y1="80" x2="200" y2="180" stroke="#8a97ab" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="380" y1="80" x2="560" y2="180" stroke="#8a97ab" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="170" y1="230" x2="380" y2="280" stroke="#8a97ab" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="590" y1="230" x2="380" y2="280" stroke="#8a97ab" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- edge labels -->
+  <text x="255" y="115" font-size="13" fill="#5a6a80">提供"大脑"</text>
+  <text x="480" y="115" font-size="13" fill="#5a6a80">加载进上下文</text>
+  <text x="240" y="270" font-size="13" fill="#5a6a80">调用工具读写</text>
+  <text x="475" y="270" font-size="13" fill="#5a6a80">按手册执行</text>
+  <!-- nodes -->
+  <g>
+    <rect x="290" y="30" width="180" height="52" rx="10" fill="#4a6fa5"/>
+    <text x="380" y="52" font-size="17" fill="#fff" text-anchor="middle" font-weight="bold">LLM 上下文</text>
+    <text x="380" y="72" font-size="12" fill="#dbe6f5" text-anchor="middle">底层资源：模型能看见的信息</text>
+  </g>
+  <g>
+    <rect x="80" y="180" width="180" height="52" rx="10" fill="#3e8e6e"/>
+    <text x="170" y="202" font-size="17" fill="#fff" text-anchor="middle" font-weight="bold">Agent</text>
+    <text x="170" y="222" font-size="12" fill="#d9efe5" text-anchor="middle">运行时：自主执行任务</text>
+  </g>
+  <g>
+    <rect x="500" y="180" width="180" height="52" rx="10" fill="#b07d3c"/>
+    <text x="590" y="202" font-size="17" fill="#fff" text-anchor="middle" font-weight="bold">Skill</text>
+    <text x="590" y="222" font-size="12" fill="#f3e6d2" text-anchor="middle">方法资产：SOP 手册</text>
+  </g>
+  <g>
+    <rect x="290" y="280" width="180" height="46" rx="10" fill="#5a6a80"/>
+    <text x="380" y="309" font-size="15" fill="#fff" text-anchor="middle" font-weight="bold">工具 / 文件系统</text>
+  </g>
+</svg>
+</div>
+
+<h2>关系详解</h2>
+<table>
+  <tr><th>关系</th><th>说明</th></tr>
+  <tr><td>上下文 → Agent</td><td>Agent 的每一步决策都基于上下文中的信息；上下文是 Agent 的"工作记忆"，决定了它知道什么、能引用什么。</td></tr>
+  <tr><td>Skill → 上下文</td><td>Skill 文件本身平时"沉睡"在磁盘上，只在匹配任务时被加载进上下文——这是按需注入、节省窗口空间的巧妙设计。</td></tr>
+  <tr><td>Agent ↔ 工具</td><td>Agent 通过调用工具（读写文件、执行命令）来行动；工具的返回结果又写回上下文，形成"行动 → 观察 → 再决策"循环。</td></tr>
+  <tr><td>Skill → Agent</td><td>Skill 把人的经验固化为流程，Agent 加载后即按 SOP 执行——相当于给通用大脑装上专业操作手册。</td></tr>
+</table>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>上下文是"知道"，Skill 是"会做的方法"，Agent 是"真正去做"。</strong>三者叠加 = 一个既懂知识、又懂方法、还能动手的数字员工。</div>
+
+<nav>
+  本概念系列：
+  <a href="agent.html">Agent 详解</a>
+  <a href="llm-context.html">LLM 上下文</a>
+  <a href="skill.html">Skill</a>
+  <a href="concept-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>
