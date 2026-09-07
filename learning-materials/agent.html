@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：Agent（智能体）</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .analogy,.example,.pitfall{border-radius:8px;padding:12px 18px;margin:1em 0}
+  .analogy{background:#fff8e6;border:1px solid #f0d890}
+  .example{background:#eefaf0;border:1px solid #9fd8a8}
+  .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+  code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<h1><span class="tag">概念详解</span>Agent（智能体）</h1>
+<div class="summary"><strong>一句话摘要：</strong>Agent 是能够感知环境、自主做出决策并采取行动来完成目标的系统——在 AI 语境下，通常指"让大模型不只是回答问题，而是能使用工具、分步执行、自主完成任务的程序"。</div>
+
+<h2>定义</h2>
+<p><strong>Agent</strong>（智能体）源自经济学与人工智能中的经典概念：一个处于某种环境中的实体，它能够<strong>感知</strong>（perceive）环境信息、根据内部策略<strong>决策</strong>（decide）、并执行<strong>行动</strong>（act）去影响环境，形成一个循环（常称为"感知—决策—行动"循环）。在当今大模型（LLM）领域，Agent 特指：以 LLM 为"大脑"，配上<strong>工具调用</strong>、<strong>记忆</strong>和<strong>任务规划</strong>能力，让它能多步骤地自主完成复杂任务的系统。</p>
+
+<h2>核心组成</h2>
+<ul>
+  <li><strong>大脑（LLM）</strong>：负责理解任务、推理和决策下一步做什么。</li>
+  <li><strong>工具（Tools）</strong>：Agent 可以调用的外部能力，如读写文件、搜索网页、执行代码、调用 API。</li>
+  <li><strong>记忆（Memory）</strong>：记住之前的操作结果和用户偏好，供后续步骤使用。</li>
+  <li><strong>规划（Planning）</strong>：把大目标拆解成小步骤，逐步执行并根据反馈调整。</li>
+</ul>
+
+<h2>生活化类比</h2>
+<div class="analogy">💭 <strong>类比：</strong>普通对话式 AI 像一位<strong>顾问</strong>——你问它答，但动手的还得是你；而 Agent 像一位<strong>全能助理</strong>——你只说"帮我把这份报告整理好发给团队"，它会自己查资料、写文档、发邮件，中途遇到问题还会自己想办法。</div>
+
+<h2>例子</h2>
+<div class="example">📝 <strong>例子：</strong>你说"帮我调研三种博客框架并推荐一个"。一个编码类 Agent 会：① 搜索三个框架的官网与评价 → ② 读取对比数据 → ③ 在本地分别初始化小项目试跑 → ④ 综合给出推荐与理由。整个过程它自主分步执行，而不是一次性把所有话说完。</div>
+
+<h2>常见误区</h2>
+<div class="pitfall">⚠️ <strong>误区一：Agent ≠ 聊天机器人。</strong>关键区别在于是否有"行动能力"（工具调用）和"自主性"（多步规划）。<br>⚠️ <strong>误区二：Agent 万能论。</strong>Agent 的可靠性取决于其大脑（模型）与工具的质量，复杂任务中仍可能出错，需要人工监督（human-in-the-loop）。</div>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>Agent = 大模型大脑 + 工具双手 + 记忆本 + 行动计划</strong>，让它不只是"会说"，更是"会做"。</div>
+
+<nav>
+  本概念系列：
+  <a href="agent.html">Agent 详解</a>
+  <a href="llm-context.html">LLM 上下文</a>
+  <a href="skill.html">Skill</a>
+  <a href="concept-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>
