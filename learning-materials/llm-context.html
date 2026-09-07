@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：LLM 上下文（Context）</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .analogy,.example,.pitfall{border-radius:8px;padding:12px 18px;margin:1em 0}
+  .analogy{background:#fff8e6;border:1px solid #f0d890}
+  .example{background:#eefaf0;border:1px solid #9fd8a8}
+  .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+  code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<h1><span class="tag">概念详解</span>LLM 上下文（Context）</h1>
+<div class="summary"><strong>一句话摘要：</strong>上下文是大模型在生成回答时"能看到、能参考"的全部信息——包括系统提示、对话历史、传入的文件与工具结果，它决定了模型"知道什么"，是 LLM 应用的第一决定因素。</div>
+
+<h2>定义</h2>
+<p><strong>上下文（Context）</strong>指每次调用大语言模型（LLM）时送入模型的输入内容整体。模型有一个<strong>上下文窗口（Context Window）</strong>，以 token（词元）为计量单位，例如 128K token 约相当于一部中篇小说的长度。<strong>窗口之内的信息，模型才能"看见"并使用；窗口之外的信息，对模型来说等于不存在。</strong>这就是"上下文是王道（Context is King）"说法的由来。</p>
+
+<h2>上下文的构成</h2>
+<ul>
+  <li><strong>系统提示（System Prompt）</strong>：定义模型的角色、规则与行为边界。</li>
+  <li><strong>对话历史（History）</strong>：本次会话中之前的所有往来消息。</li>
+  <li><strong>检索内容（RAG）</strong>：从文档库、网页等外部检索到的参考资料。</li>
+  <li><strong>工具结果（Tool Results）</strong>：Agent 调用工具后返回的数据，也要进入上下文。</li>
+</ul>
+
+<h2>生活化类比</h2>
+<div class="analogy">💭 <strong>类比：</strong>上下文窗口像模型面前的一张<strong>考试草稿桌</strong>——桌上摆了什么资料，它就能引用什么。桌子面积有限（窗口大小），所以放什么、放多少、按什么顺序放（上下文工程），直接决定考试成绩。</div>
+
+<h2>例子</h2>
+<div class="example">📝 <strong>例子：</strong>你问 AI"我上次说的那个方案怎么改？"——如果"上次的方案"不在本次上下文里，模型只能回答"请提供更多信息"。这不是模型笨，而是信息根本不在它的"桌面"上。把方案粘贴进来后，它立刻就能给出修改建议。</div>
+
+<h2>常见误区</h2>
+<div class="pitfall">⚠️ <strong>误区一：模型"记得"我。</strong>多数情况下模型没有跨对话记忆，"记得你"是因为应用把历史记录重新放进了上下文。<br>⚠️ <strong>误区二：窗口越大越好。</strong>窗口大不代表模型能均匀利用所有信息——中间内容容易被"忽略"（lost in the middle），重要信息应尽量放在开头或结尾。</div>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>上下文 = 模型的"工作桌面"。</strong>桌面上没有的，模型就不知道；管理好这张桌面（上下文工程），比换更大的模型往往更重要。</div>
+
+<nav>
+  本概念系列：
+  <a href="agent.html">Agent 详解</a>
+  <a href="llm-context.html">LLM 上下文</a>
+  <a href="skill.html">Skill</a>
+  <a href="concept-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>
