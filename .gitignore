@@ -1,0 +1,15 @@
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# 临时文件
+*.tmp
+*.log
+*.bak
+
+# 本地环境
+node_modules/
+__pycache__/
+.env
