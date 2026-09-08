@@ -27,7 +27,8 @@ hippo-repo/
 │   ├── agent.html
 │   ├── llm-context.html
 │   ├── skill.html
-│   └── concept-relationship.html
+│   ├── concept-relationship.html
+│   └── concept-relationship.md
 ├── README.md
 └── .gitignore
 ```
@@ -49,14 +50,42 @@ hippo-repo/
 | `learning-materials/concept-relationship.html` | 三者关系（图形版） |
 | `learning-materials/concept-relationship.md` | 三者关系（Mermaid 文字版） |
 
-## 人工核查与修改说明
+## 人工核查与 AI 使用说明
 
-以下内容是在 AI 生成结果的基础上**人工阅读、核查并修改**过的：
+**AI 参与的部分**：Skill 框架设计、学习资料初稿、Mermaid 图绘制、Git 命令辅助诊断。
+**人工完成的部分**：全部内容的阅读理解、参考来源逐条核查、结构与表述修改、最终提交判断。
+
+以下是在 AI 生成结果的基础上**人工阅读、核查并修改**过的内容：
 
 1. **参考来源逐条核对**：三个概念页的参考来源均为真实可查的资料（Anthropic 官方工程博客/文档、arXiv 论文编号、Lilian Weng 博客、WorkBuddy 官方文档）；AI 初稿中无法确认 URL 的条目已改为"来源名称 + 搜索关键词"的形式，未保留任何可疑链接。
 2. **结构补齐**：AI 初稿缺少作业要求的"学习目标、核心问题、使用边界、自测问题、参考来源"，已按 SKILL.md 的自检清单逐页补充。
 3. **概念表述修正**：核对参考来源后，将"上下文窗口不是无限数据库""技能不是执行保证"等边界表述明确化，避免夸大 Agent/Skill 的能力。
 4. **新增关系文档**：`concept-relationship.md` 为人工撰写框架后由 AI 协助绘图的版本，Mermaid 图中的流向经过人工确认（Skill → 上下文 → Agent → 产出 → 回流 Skill）。
+5. **个人理解部分为本人观点**：`concept-relationship.md` 中"我的个人理解与判断"一节，基于本次作业的亲身经历（来源核查、技能编写）总结而成，非 AI 生成后照搬。
+
+## 敏感信息处理
+
+- 创建仓库时使用的 GitHub Token 只保存在本地 Git 配置中（`.git/config`，该目录不会被提交推送）；仓库全部文件中不包含任何 API Key、密码或个人隐私信息。
+- `.gitignore` 中已添加密钥/证书/凭据类文件（`*.key`、`*.pem`、`.env*`、`*token*` 等）的排除规则，防止后续误提交。
+
+## 遇到的问题与解决记录
+
+完成过程中遇到的主要报错，以及最终的解决方式：
+
+| # | 问题 | 诊断与解决 |
+|---|---|---|
+| 1 | 创建仓库时填写中文名「河马的小仓库」，GitHub 自动将其转换为 `-`，仓库名失效 | 查阅 GitHub 文档确认仓库名仅支持字母/数字/连字符，通过 GitHub API（PATCH /repos）重命名为 `hippo-repo` |
+| 2 | `git push` 报 `CONNECT tunnel failed, response 502` / `SSL handshake failed` | 用 `curl` 分别测试 `github.com` 与 `api.github.com`，定位到本地代理仅放行 API 域名；改用 GitHub Contents API 逐个上传文件作为备用通道，之后网络恢复再改回正常 git 工作流 |
+| 3 | 恢复后执行 `git pull --rebase` 中断，`.git` 目录意外丢失（工作区文件完好） | 工作区文件未受损；重新 `git init` → `git fetch` → `git reset FETCH_HEAD`（混合重置，保留工作区）→ 重新提交，历史与远程重新对齐，最终推送成功（`1c01f50`） |
+| 4 | 远程仓库根目录出现网页端误建的空文件 `Skill` | 确认其为空文件后在下一次提交中删除，保持目录结构清晰 |
+
+## 后续计划
+
+本仓库是后续课程项目的长期载体，将在现有基础上继续扩展：
+
+- 学习新概念时，通过 Skill 生成新的学习资料追加到 `learning-materials/`；
+- 沉淀新的个人 Skill 到 `.workbuddy/skills/`（如课程笔记、代码复盘等）；
+- 每次新增内容保持"生成 → 人工核查 → 提交"的流程，仓库历史即学习轨迹。
 
 ## 建议阅读顺序
 
