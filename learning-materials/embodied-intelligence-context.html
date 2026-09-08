@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：具身智能的时代背景与上下文</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .analogy,.example,.pitfall{border-radius:8px;padding:12px 18px;margin:1em 0}
+  .analogy{background:#fff8e6;border:1px solid #f0d890}
+  .example{background:#eefaf0;border:1px solid #9fd8a8}
+  .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+  code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<h1><span class="tag">背景与上下文</span>具身智能为什么现在火？</h1>
+<div class="summary"><strong>一句话摘要：</strong>具身智能不是新概念（思想可追溯到 1980-90 年代机器人学），但直到"大模型充当大脑 + 传感器与执行器成本下降 + 产业需求爆发"三件事同时发生，它才从实验室走进产业视野。</div>
+
+<h2>学习目标</h2>
+<ul>
+  <li>能说出推动具身智能爆发的三个外部条件</li>
+  <li>能解释"离身 AI 的天花板"为什么倒逼研究者走向具身</li>
+  <li>能列出学习具身智能需要的前置知识清单</li>
+</ul>
+
+<h2>核心问题</h2>
+<ul>
+  <li>为什么是 2023 年之后（而不是更早）具身智能集中突破？</li>
+  <li>大模型在具身智能浪潮里扮演"大脑"还是"老师"？</li>
+</ul>
+
+<h2>它出现的历史上下文</h2>
+<ul>
+  <li><strong>1980-90 年代：思想萌芽。</strong>Rodney Brooks 等人批评"先建完美世界模型再行动"的传统路线，提出智能应从与环境的直接交互中"自下而上"涌现（行为主义机器人学）。受限于硬件与算法，当时只能做简单反应式机器人。</li>
+  <li><strong>2012-2020：深度学习时代。</strong>视觉感知大幅进步，强化学习在游戏和仿真控制中突破，但真实机器人学习依然受限于数据稀缺。</li>
+  <li><strong>2022 至今：大模型拐点。</strong>LLM 带来了通用的语义理解与任务规划能力；PaLM-E、RT-2 等工作证明了"大模型可以直接当机器人大脑"，视觉-语言-动作（VLA）模型成为主流范式，具身智能由此进入产业与公众视野。</li>
+</ul>
+
+<h2>它解决什么问题</h2>
+<p>离身 AI 有一个明显的天花板：<strong>它只能操作"人类已经写下来的知识"</strong>。做饭、洗衣、照顾老人这些世界的"操作性知识"从未被系统地写成文本，所以再大的语言模型也学不会。具身智能让 AI 自己去物理世界中采集和积累这些"操作性数据"，绕开文本数据的边界——这是它存在的根本理由。</p>
+
+<h2>生活化类比</h2>
+<div class="analogy">💭 <strong>类比：</strong>过去十年 AI 在"图书馆"里成长（读遍互联网），现在它要进"体校"了——图书馆给不了肌肉记忆，教练（环境反馈）和训练场（物理世界/仿真器）缺一不可。</div>
+
+<h2>例子：三个条件如何同时到位</h2>
+<div class="example">📝 <strong>例子：</strong>以"机器人整理桌面"为例——① 大模型让它听懂"把玩具收进箱子"这种模糊指令（2022 年前的语音助手做不到）；② 廉价的摄像头与深度传感器让它"看得见"；③ 制造业、养老照护的真实劳动力缺口让它有了落地动力。三者缺一，它都只能停留在论文里。</div>
+
+<h2>前置知识清单</h2>
+<div class="pitfall">学习具身智能前建议先具备：① Python 编程；② 深度学习基础（卷积网络、Transformer 的大致原理）；③ 一点机器人学概念（坐标变换、运动学）；④ 对强化学习"奖励—试错"框架的直觉。不必样样精通，有地图即可，遇到再深入。</div>
+
+<h2>自测问题</h2>
+<ol>
+  <li>Brooks 那一代研究者与今天的具身智能，共同的信念是什么？差的条件又是什么？（提示：交互产生智能；缺大模型这个"大脑"）</li>
+  <li>"操作性知识为什么不在互联网上"——请举一个你自己生活中的例子。</li>
+  <li>VLA 模型（视觉-语言-动作）三个词分别对应闭环的哪一环？</li>
+</ol>
+
+<h2>参考来源</h2>
+<ul>
+  <li>论文：<em>PaLM-E: An Embodied Multimodal Language Model</em>（Driess 等，2023），arXiv 编号 2303.03378，<code>https://arxiv.org/abs/2303.03378</code>——"大模型当大脑"路线的代表作</li>
+  <li>论文：<em>RT-2: Vision-Language-Action Models...</em>（Brohan 等，2023），arXiv 编号 2307.15818，<code>https://arxiv.org/abs/2307.15818</code>——提出 VLA（视觉-语言-动作）范式</li>
+  <li>思想史：Rodney Brooks，<em>Intelligence Without Representation</em>（1991），建议搜索"Brooks intelligence without representation AI Journal"获取原文</li>
+  <li>具身认知哲学背景：Stanford Encyclopedia of Philosophy 词条 <em>Embodied Cognition</em>，建议搜索"SEP embodied cognition"</li>
+</ul>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>具身智能 = 老理念（交互产生智能）+ 新引擎（大模型大脑）+ 新硬件（便宜的身体）</strong>，三者同期到位，才有今天的爆发。</div>
+
+<nav>
+  本概念系列：
+  <a href="embodied-intelligence.html">具身智能详解</a>
+  <a href="embodied-intelligence-context.html">时代背景与上下文</a>
+  <a href="embodied-intelligence-application.html">应用与上手路径</a>
+  <a href="embodied-intelligence-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>

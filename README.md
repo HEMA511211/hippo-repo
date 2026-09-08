@@ -8,8 +8,7 @@
    它定义了一套工作流程：当需要学习某个概念时，自动生成 4 个互相链接的 HTML 学习页面
    （概念详解、上下文、应用、概念关系图），统一格式、自包含、可离线阅读。
 
-2. **`learning-materials/`** —— 由该 Skill 生成的第一批学习资料，主题为本次作业涉及的
-   三个核心概念及其关系：
+2. **`learning-materials/`** —— 由该 Skill 生成的学习资料。第一批为本次作业涉及的三个核心概念及其关系；之后每学习一个新概念追加一组 4 页资料（示例：具身智能）：
    - [agent.html](learning-materials/agent.html) —— Agent（智能体）：大脑 + 工具 + 记忆 + 规划
    - [llm-context.html](learning-materials/llm-context.html) —— LLM 上下文：模型的"工作桌面"
    - [skill.html](learning-materials/skill.html) —— Skill：写给 AI 的 SOP 手册
@@ -49,6 +48,10 @@ hippo-repo/
 | `learning-materials/skill.html` | Skill |
 | `learning-materials/concept-relationship.html` | 三者关系（图形版） |
 | `learning-materials/concept-relationship.md` | 三者关系（Mermaid 文字版） |
+| `learning-materials/embodied-intelligence.html` | 具身智能（Skill 第二次调用产出） |
+| `learning-materials/embodied-intelligence-context.html` | 具身智能：时代背景与上下文 |
+| `learning-materials/embodied-intelligence-application.html` | 具身智能：应用与上手路径 |
+| `learning-materials/embodied-intelligence-relationship.html` | 具身智能 × Agent × 上下文 × Skill 关系图 |
 
 ## 人工核查与 AI 使用说明
 

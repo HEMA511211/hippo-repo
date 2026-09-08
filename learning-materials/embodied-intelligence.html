@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>概念学习：具身智能（Embodied Intelligence）</title>
+<style>
+  body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
+  h1{font-size:1.9em;border-bottom:3px solid #4a6fa5;padding-bottom:8px}
+  h2{font-size:1.3em;color:#2c4a7c;margin-top:2em;border-left:4px solid #4a6fa5;padding-left:10px}
+  .summary{background:#eef3fa;border-radius:8px;padding:14px 18px;font-size:1.05em}
+  .analogy,.example,.pitfall{border-radius:8px;padding:12px 18px;margin:1em 0}
+  .analogy{background:#fff8e6;border:1px solid #f0d890}
+  .example{background:#eefaf0;border:1px solid #9fd8a8}
+  .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
+  .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
+  .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
+  nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
+  nav a{color:#4a6fa5;margin-right:14px}
+  code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
+</style>
+</head>
+<body>
+<h1><span class="tag">概念详解</span>具身智能（Embodied Intelligence）</h1>
+<div class="summary"><strong>一句话摘要：</strong>具身智能认为，真正的智能不能只靠"大脑"（算法与数据）产生，还必须有"身体"——智能体通过与物理或虚拟环境的实时感知与行动闭环，把智能"落"到现实世界里。2025 年大模型与机器人结合后，它成为人工智能最活跃的方向之一。</div>
+
+<h2>学习目标</h2>
+<ul>
+  <li>能用自己的话说出"具身"与"离身"智能的核心区别（身体在智能中扮演什么角色）</li>
+  <li>能画出"感知—决策—行动"闭环，并指出大模型在其中的位置</li>
+  <li>能说出当前具身智能落地的两大瓶颈（数据与安全）</li>
+</ul>
+
+<h2>核心问题</h2>
+<ul>
+  <li>为什么在互联网文本上训练出来的大模型，仍然"不会"叠杯子、系鞋带这类幼儿都会的事？</li>
+  <li>身体只是智能的"输出设备"，还是智能本身的一部分？</li>
+</ul>
+
+<h2>定义</h2>
+<p><strong>具身智能（Embodied Intelligence / Embodied AI）</strong>指智能体拥有物理或虚拟的"身体"，通过传感器<strong>感知</strong>环境、由"大脑"（控制算法或大模型）<strong>决策</strong>、再通过执行器<strong>行动</strong>来改变环境，并在这一闭环中持续学习和适应。其思想源头是认知科学中的<strong>具身认知（Embodied Cognition）</strong>理论——认知不是孤立发生在大脑里的符号运算，而是大脑、身体与环境交互的产物。与之相对的是"离身智能"（disembodied AI）：只在文本、图像等数字数据中学习，不与物理世界直接交互。</p>
+
+<h2>核心机制</h2>
+<ul>
+  <li><strong>感知（Perception）</strong>：摄像头、激光雷达、力觉/触觉传感器等多模态输入，把物理世界"翻译"成机器可理解的信号。</li>
+  <li><strong>决策（Cognition）</strong>：理解任务、规划步骤。大模型（LLM/VLA 模型）的加入让这一环首次具备了通用语义理解能力。</li>
+  <li><strong>行动（Action）</strong>：机械臂、灵巧手、轮式/双足底盘把决策变成物理动作。</li>
+  <li><strong>闭环与反馈</strong>：行动改变环境 → 感知更新 → 决策修正，循环往复。错误会被环境立即"反馈"回来，这是与离身 AI 最大的学习方式差异。</li>
+</ul>
+
+<h2>生活化类比</h2>
+<div class="analogy">💭 <strong>类比：</strong>学会游泳没法只靠读教程——哪怕背下所有动作要领，不下水永远学不会。泳感（对水的感知与身体的即时调整）只能在"身体 + 水"的交互中产生。<strong>离身 AI 就是那个读遍游泳教程却没下过水的学霸</strong>，具身智能则是把 AI"放进水里"。</div>
+
+<h2>应用案例</h2>
+<div class="example">📝 <strong>例子：</strong>给机器人下达"把桌上的苹果放进冰箱"。具身智能系统需要：看懂桌面（视觉感知）→ 理解"苹果""冰箱"的语义与位置（大模型推理）→ 规划抓取路径（运动规划）→ 控制手指力度（闭环控制）→ 发现冰箱门没开时自动先开门（反馈调整）。Google 的 RT-2 模型已展示这类"看见→理解→行动"的端到端能力（见参考来源）。</div>
+
+<h2>易混淆辨析</h2>
+<div class="pitfall">⚠️ <strong>具身智能 ≠ 机器人。</strong>机器人是"身体"的载体之一，具身智能强调的是"交互产生智能"的理念与系统方法；没有智能闭环的工业机械臂不是具身智能。<br>⚠️ <strong>具身智能 ≠ 大模型 + 机械臂的简单拼接。</strong>关键在于感知、决策、行动的深度耦合与闭环反馈，而不是"上面接个 ChatBot"。游戏 AI、虚拟仿真环境中的智能体（有虚拟身体）同样属于具身智能研究范畴。<br>⚠️ <strong>与 Agent 的关系：</strong>软件 Agent 的"工具调用"相当于数字世界里的"手"，具身智能是 Agent 理念向物理世界的延伸。</div>
+
+<h2>使用边界</h2>
+<p>当前具身智能仍受两大瓶颈制约：一是<strong>数据</strong>——互联网上有无限文本图片，却没有"如何叠衣服"的海量操作数据，真机采集成本极高（这也是仿真训练兴起的原因）；二是<strong>安全</strong>——物理动作不可撤销，砸了就是砸了，家庭等开放场景的可靠性要求远高于聊天。此外，"仿真到现实"（sim-to-real）的迁移差距仍是活跃的研究难题。</p>
+
+<h2>自测问题</h2>
+<ol>
+  <li>"感知—决策—行动"闭环中，环境扮演什么角色？（提示：反馈提供者——行动结果的即时裁判）</li>
+  <li>为什么说互联网数据撑不起具身智能的训练？（提示：物理操作数据在互联网上几乎不存在）</li>
+  <li>一个只有摄像头和麦克风的音箱算"具身"吗？（提示：有感知无行动，只能算部分具身/语音交互设备）</li>
+</ol>
+
+<h2>参考来源</h2>
+<ul>
+  <li>论文：<em>PaLM-E: An Embodied Multimodal Language Model</em>（Danny Driess 等，Google，2023-03），arXiv 编号 2303.03378，网址 <code>https://arxiv.org/abs/2303.03378</code>（已实测核对标题与作者）</li>
+  <li>论文：<em>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</em>（Anthony Brohan 等，Google DeepMind，2023-07），arXiv 编号 2307.15818，网址 <code>https://arxiv.org/abs/2307.15818</code>（已实测核对标题与作者）</li>
+  <li>具身认知理论渊源：Rodney Brooks 的经典论述 <em>Elephants Don't Play Chess</em>（1994），建议搜索"Brooks elephants don't play chess PDF"获取原文</li>
+  <li>具身认知心理学背景：建议搜索"embodied cognition Stanford Encyclopedia of Philosophy"查看权威综述</li>
+</ul>
+
+<h2>一句话记住</h2>
+<div class="mem">🎯 <strong>具身智能 = 给 AI 一个身体，让它在"感知—行动"的闭环里学游泳</strong>——智能不只长在脑子里，也长在与世界的碰撞中。</div>
+
+<nav>
+  本概念系列：
+  <a href="embodied-intelligence.html">具身智能详解</a>
+  <a href="embodied-intelligence-context.html">时代背景与上下文</a>
+  <a href="embodied-intelligence-application.html">应用与上手路径</a>
+  <a href="embodied-intelligence-relationship.html">概念关系图</a>
+</nav>
+</body>
+</html>
