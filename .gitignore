@@ -13,3 +13,12 @@ Thumbs.db
 node_modules/
 __pycache__/
 .env
+.env.*
+
+# 密钥与隐私（绝不提交）
+*.key
+*.pem
+*.p12
+*token*
+*secret*
+credentials*.txt

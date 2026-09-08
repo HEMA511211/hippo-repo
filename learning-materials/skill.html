@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="zh-CN" data-page-node-id="7yDGRymetoWH65r1Dll4QH">
+<head data-page-node-id="yGBuhmPQYjlfLP0GVnmoER">
+<meta charset="utf-8" data-page-node-id="S2yNcf0y9vVz4a6FY8os45">
+<meta name="viewport" content="width=device-width, initial-scale=1" data-page-node-id="r1b3pZqJB6IeW1tmF0rpVO">
 <title>概念学习：Skill（技能）</title>
 <style>
   body{font-family:"Microsoft YaHei",-apple-system,sans-serif;max-width:760px;margin:0 auto;padding:32px 20px;background:#fff;color:#1a1a2e;line-height:1.8}
@@ -21,15 +21,15 @@
   code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
 </style>
 </head>
-<body>
-<h1><span class="tag">概念详解</span>Skill（技能）</h1>
-<div class="summary"><strong>一句话摘要：</strong>Skill 是把"完成某类任务的方法论"写成结构化文档（如 SKILL.md），存放在约定目录里，让 AI 助手在遇到相关任务时自动加载并照着执行——本质上是给 AI 装上可复用的"操作手册"。</div>
+<body data-page-node-id="lIYz6MKyAgSbnDEPoEZMFl">
+<h1 data-page-node-id="UIQPvy1T35ZwXu5aQUpM3A"><span class="tag" data-page-node-id="XetESTviB9z1WhVS2H2NqN">概念详解</span>Skill（技能）</h1>
+<div class="summary" data-page-node-id="d2kDvmNywg2gV7zEbDGleQ"><strong data-page-node-id="6LRHPmvSLramNsBSAekwTQ">一句话摘要：</strong>Skill 是把"完成某类任务的方法论"写成结构化文档（如 SKILL.md），存放在约定目录里，让 AI 助手在遇到相关任务时自动加载并照着执行——本质上是给 AI 装上可复用的"操作手册"。</div>
 
-<h2>定义</h2>
-<p><strong>Skill</strong> 是一种"知识打包"机制：将某个任务的最佳实践——触发条件、工作步骤、输出规范、注意事项——写成一份带元数据（name、description）的说明文档，放在 AI 助手约定的技能目录（如 <code>.workbuddy/skills/</code>）下。当用户的请求匹配技能描述时，助手会先读取这份文档，再按其中的流程执行，从而稳定地复现高质量的工作方式。</p>
+<h2 data-page-node-id="2Hlj8zlBpOZAihGS706Dab">定义</h2>
+<p data-page-node-id="yscWO42Lh6XdJNe7ZxUtXL"><strong data-page-node-id="zMs9pELHP5jEd79KrQLM4E">Skill</strong> 是一种"知识打包"机制：将某个任务的最佳实践——触发条件、工作步骤、输出规范、注意事项——写成一份带元数据（name、description）的说明文档，放在 AI 助手约定的技能目录（如 <code data-page-node-id="hGl3KzNbGbKH9UZmCG4fFA">.workbuddy/skills/</code>）下。当用户的请求匹配技能描述时，助手会先读取这份文档，再按其中的流程执行，从而稳定地复现高质量的工作方式。</p>
 
-<h2>SKILL.md 的典型结构</h2>
-<pre>---
+<h2 data-page-node-id="FIznCvOwPKLIltHZgj4b8F">SKILL.md 的典型结构</h2>
+<pre data-page-node-id="9kv6kGQeHY6t9kNPD7Fevl">---
 name: my-skill          # 技能名称
 description: 何时触发、做什么  # 助手据此判断是否加载
 ---
@@ -39,24 +39,54 @@ description: 何时触发、做什么  # 助手据此判断是否加载
 ## 输出规范               # 产物的格式与质量要求
 ## 边界                   # 不做什么</pre>
 
-<h2>生活化类比</h2>
-<div class="analogy">💭 <strong>类比：</strong>Skill 就像交给新员工的<strong>SOP 手册（标准作业程序）</strong>。没有手册时，新员工每次做事全凭临场发挥、质量忽高忽低；有了手册，"财务报销""周报撰写"都按固定流程执行，谁来做得都一样好。</div>
+<h2 data-page-node-id="QB3yrO2t3FOfAfSdCjXKsq">生活化类比</h2>
+<div class="analogy" data-page-node-id="qxrXjZo94sAXEFYBh4IDLW">💭 <strong data-page-node-id="oz6Az2CjUs7xYzLId1p9cp">类比：</strong>Skill 就像交给新员工的<strong data-page-node-id="7fmrlU1fVxL6d6NSfFZOQI">SOP 手册（标准作业程序）</strong>。没有手册时，新员工每次做事全凭临场发挥、质量忽高忽低；有了手册，"财务报销""周报撰写"都按固定流程执行，谁来做得都一样好。</div>
 
-<h2>例子</h2>
-<div class="example">📝 <strong>例子：</strong>本仓库的 <code>concept-learning-materials</code> 技能就是一例：它规定"当用户要学习某概念时，按四步生成 4 个互相链接的 HTML 页面"。以后你只需说"帮我搞懂 Transformer"，助手就会按既定规范产出统一格式的学习资料——这就是技能带来的确定性和复用性。</div>
+<h2 data-page-node-id="VCHiBEH4Ky3xVEUWEYvE0G">例子</h2>
+<div class="example" data-page-node-id="Felmrm7hnPI5d6R27FDCLw">📝 <strong data-page-node-id="TcCJ9BSiHAEKyMQKmIlFtL">例子：</strong>本仓库的 <code data-page-node-id="SEi2oQDGoVp7Tj0uebOOzo">concept-learning-materials</code> 技能就是一例：它规定"当用户要学习某概念时，按四步生成 4 个互相链接的 HTML 页面"。以后你只需说"帮我搞懂 Transformer"，助手就会按既定规范产出统一格式的学习资料——这就是技能带来的确定性和复用性。</div>
 
-<h2>常见误区</h2>
-<div class="pitfall">⚠️ <strong>误区一：Skill 等于提示词。</strong>提示词是单次对话的临时指令；Skill 是持久化、可版本管理、可分享的方法论资产。<br>⚠️ <strong>误区二：写得越多越好。</strong>技能文档应精炼、可执行——模糊冗长的描述反而让助手无所适从。</div>
+<h2 data-page-node-id="AyTs9ocIxCSIsHhyJfp9Lq">常见误区</h2>
+<div class="pitfall" data-page-node-id="3e9fpCyElzGrDAxiH7t7V7">⚠️ <strong data-page-node-id="xCoNh7MGikW9GO017R8vH3">误区一：Skill 等于提示词。</strong>提示词是单次对话的临时指令；Skill 是持久化、可版本管理、可分享的方法论资产。<br data-page-node-id="mBLLD3it58deeZGs2iCVg9">⚠️ <strong data-page-node-id="xKgvYpzmAiDyUMVHFgi14h">误区二：写得越多越好。</strong>技能文档应精炼、可执行——模糊冗长的描述反而让助手无所适从。</div>
 
-<h2>一句话记住</h2>
-<div class="mem">🎯 <strong>Skill = 写给 AI 的 SOP 手册。</strong>把"我知道怎么做"变成"AI 照着就能做对"，且一次编写、处处复用。</div>
+<h2>学习目标</h2>
+<ul>
+  <li>能说出 SKILL.md 必备的 YAML 元数据字段（name、description）及其作用</li>
+  <li>能把一个重复性任务整理成一份可复用的技能文档</li>
+  <li>能解释 Skill 与单次提示词的两点本质区别</li>
+</ul>
 
-<nav>
+<h2>核心问题</h2>
+<ul>
+  <li>助手是靠什么判断"该加载哪个技能"的？（提示：description 与用户请求的匹配）</li>
+  <li>什么样的任务最值得沉淀为 Skill？</li>
+</ul>
+
+<h2>使用边界</h2>
+<p>Skill 适合沉淀<strong>流程明确、可复用、对格式/质量有要求</strong>的任务；一次性、高度即兴的任务写成 Skill 反而是负担。技能不是执行保证——助手仍可能偏离文档，重要产出需要人工抽查。</p>
+
+<h2>自测问题</h2>
+<ol>
+  <li>SKILL.md 顶部的 YAML 中，助手用来判断"何时触发"的字段是哪个？（提示：description）</li>
+  <li>如果把技能描述写成"帮我做事"，会发生什么？（提示：无法判断何时触发，技能形同虚设）</li>
+  <li>为什么说 Skill 应放在项目级 <code>.workbuddy/skills/</code> 目录并提交到仓库？（提示：可版本管理、可分享、跨设备复用）</li>
+</ol>
+
+<h2>参考来源</h2>
+<ul>
+  <li>Anthropic 官方工程博客：<em>Equipping agents for the real world with Agent Skills</em>，网址 <code>https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills</code></li>
+  <li>Claude 官方文档：<em>Agent Skills</em>，网址 <code>https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview</code></li>
+  <li>WorkBuddy 官方文档（技能的本地实践），网址 <code>https://www.workbuddy.cn/docs/workbuddy/Overview</code></li>
+</ul>
+
+<h2 data-page-node-id="F7itj1W2bIjhAzJCIuWnff">一句话记住</h2>
+<div class="mem" data-page-node-id="yySrXd4MR73kl3feVFkeh8">🎯 <strong data-page-node-id="QV6KPzSHGVXFVjwEvyHrGt">Skill = 写给 AI 的 SOP 手册。</strong>把"我知道怎么做"变成"AI 照着就能做对"，且一次编写、处处复用。</div>
+
+<nav data-page-node-id="LSSQnby97YJQEHHr6BDzQa">
   本概念系列：
-  <a href="agent.html">Agent 详解</a>
-  <a href="llm-context.html">LLM 上下文</a>
-  <a href="skill.html">Skill</a>
-  <a href="concept-relationship.html">概念关系图</a>
+  <a href="agent.html" data-page-node-id="DVvRvxiviQxcdUEa972g5g">Agent 详解</a>
+  <a href="llm-context.html" data-page-node-id="hRjbWrRD6jP9T0SS5OZWUG">LLM 上下文</a>
+  <a href="skill.html" data-page-node-id="E7GisHgozmNwG3Mrp4tO2a">Skill</a>
+  <a href="concept-relationship.html" data-page-node-id="ivQatUkkmlYGbVNRpgxGTl">概念关系图</a>
 </nav>
 </body>
 </html>

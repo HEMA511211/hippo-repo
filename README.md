@@ -32,16 +32,33 @@ hippo-repo/
 └── .gitignore
 ```
 
-## 使用方法
+## 使用方法（在 WorkBuddy 中调用）
 
-将 Skill 安装到 WorkBuddy 后（放入 `.workbuddy/skills/` 即可），对 AI 助手说：
+1. 本仓库的 `.workbuddy/skills/` 目录就是 WorkBuddy 的**项目级技能目录**：在 WorkBuddy 中打开本仓库作为工作区，技能即被识别。
+2. 对 AI 助手说：**"帮我搞懂 <概念名>"**（如"帮我搞懂注意力机制"）。
+3. 助手匹配到 `concept-learning-materials` 技能后，会按 SKILL.md 定义的流程，在 `learning-materials/` 下生成该概念的 4 页学习资料（概念详解、上下文、应用、关系图），并附学习目标、核心问题、自测问题与参考来源。
+4. 所有页面为自包含 HTML，双击即可离线打开。
 
-> "帮我搞懂 <概念名>"
+## 已生成的学习资料
 
-助手会按 SKILL.md 中定义的流程，在 `learning-materials/` 下生成该概念的 4 页学习资料。
-页面均为自包含 HTML，双击即可离线打开。
+| 文件 | 主题 |
+|---|---|
+| `learning-materials/agent.html` | Agent（智能体） |
+| `learning-materials/llm-context.html` | 大模型的上下文 |
+| `learning-materials/skill.html` | Skill |
+| `learning-materials/concept-relationship.html` | 三者关系（图形版） |
+| `learning-materials/concept-relationship.md` | 三者关系（Mermaid 文字版） |
+
+## 人工核查与修改说明
+
+以下内容是在 AI 生成结果的基础上**人工阅读、核查并修改**过的：
+
+1. **参考来源逐条核对**：三个概念页的参考来源均为真实可查的资料（Anthropic 官方工程博客/文档、arXiv 论文编号、Lilian Weng 博客、WorkBuddy 官方文档）；AI 初稿中无法确认 URL 的条目已改为"来源名称 + 搜索关键词"的形式，未保留任何可疑链接。
+2. **结构补齐**：AI 初稿缺少作业要求的"学习目标、核心问题、使用边界、自测问题、参考来源"，已按 SKILL.md 的自检清单逐页补充。
+3. **概念表述修正**：核对参考来源后，将"上下文窗口不是无限数据库""技能不是执行保证"等边界表述明确化，避免夸大 Agent/Skill 的能力。
+4. **新增关系文档**：`concept-relationship.md` 为人工撰写框架后由 AI 协助绘图的版本，Mermaid 图中的流向经过人工确认（Skill → 上下文 → Agent → 产出 → 回流 Skill）。
 
 ## 建议阅读顺序
 
-agent.html → llm-context.html → skill.html → concept-relationship.html
+agent.html → llm-context.html → skill.html → concept-relationship.md / .html
 （先懂个体，再看关系）

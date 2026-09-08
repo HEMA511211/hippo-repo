@@ -41,8 +41,38 @@
 <h2>例子</h2>
 <div class="example">📝 <strong>例子：</strong>你说"帮我调研三种博客框架并推荐一个"。一个编码类 Agent 会：① 搜索三个框架的官网与评价 → ② 读取对比数据 → ③ 在本地分别初始化小项目试跑 → ④ 综合给出推荐与理由。整个过程它自主分步执行，而不是一次性把所有话说完。</div>
 
+<h2>学习目标</h2>
+<ul>
+  <li>能用自己的话说出 Agent 与普通对话式 AI 的两点关键区别</li>
+  <li>能列出 Agent 的四个核心组成并各举一例</li>
+  <li>能针对一个具体任务，粗略设计出 Agent 的执行步骤</li>
+</ul>
+
+<h2>核心问题</h2>
+<ul>
+  <li>为什么"能调用工具"是 Agent 与聊天机器人的分水岭？</li>
+  <li>Agent 在多步执行中靠什么保持方向不跑偏？</li>
+</ul>
+
 <h2>常见误区</h2>
 <div class="pitfall">⚠️ <strong>误区一：Agent ≠ 聊天机器人。</strong>关键区别在于是否有"行动能力"（工具调用）和"自主性"（多步规划）。<br>⚠️ <strong>误区二：Agent 万能论。</strong>Agent 的可靠性取决于其大脑（模型）与工具的质量，复杂任务中仍可能出错，需要人工监督（human-in-the-loop）。</div>
+
+<h2>使用边界</h2>
+<p>适合交给 Agent 的是<strong>步骤明确、结果可验证</strong>的任务（如代码修改后跑测试）；高风险、不可逆或强主观判断的任务（如对外发布、重要决策）应保留人工确认环节。</p>
+
+<h2>自测问题</h2>
+<ol>
+  <li>Agent 的"感知—决策—行动"循环中，工具调用发生在哪一环？（提示：行动）</li>
+  <li>把普通对话式 AI 变成 Agent，最少要增加哪种能力？（提示：工具调用）</li>
+  <li>为什么说 Agent 需要"记忆"？（提示：多步骤之间传递中间结果）</li>
+</ol>
+
+<h2>参考来源</h2>
+<ul>
+  <li>Lilian Weng（前 OpenAI 研究副总裁）博客：<em>LLM Powered Autonomous Agents</em>，可搜索"lilianweng LLM Powered Autonomous Agents"</li>
+  <li>Anthropic 官方工程指南：<em>Building Effective Agents</em>，网址 <code>https://www.anthropic.com/research/building-effective-agents</code></li>
+  <li>ReAct 原始论文（推理+行动协同）：<em>ReAct: Synergizing Reasoning and Acting in Language Models</em>，arXiv 编号 2210.03629</li>
+</ul>
 
 <h2>一句话记住</h2>
 <div class="mem">🎯 <strong>Agent = 大模型大脑 + 工具双手 + 记忆本 + 行动计划</strong>，让它不只是"会说"，更是"会做"。</div>

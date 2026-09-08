@@ -41,8 +41,38 @@
 <h2>例子</h2>
 <div class="example">📝 <strong>例子：</strong>你问 AI"我上次说的那个方案怎么改？"——如果"上次的方案"不在本次上下文里，模型只能回答"请提供更多信息"。这不是模型笨，而是信息根本不在它的"桌面"上。把方案粘贴进来后，它立刻就能给出修改建议。</div>
 
+<h2>学习目标</h2>
+<ul>
+  <li>能说出上下文窗口的计量单位（token）及其大致容量概念</li>
+  <li>能列举上下文的四种典型来源（系统提示/历史/检索/工具结果）</li>
+  <li>遇到"模型答非所问"时，能按"先查上下文"的思路排查原因</li>
+</ul>
+
+<h2>核心问题</h2>
+<ul>
+  <li>为什么说"上下文工程"（Context Engineering）比单纯换更大的模型更划算？</li>
+  <li>长文档放进上下文时，信息放在哪个位置最不容易被忽略？</li>
+</ul>
+
 <h2>常见误区</h2>
 <div class="pitfall">⚠️ <strong>误区一：模型"记得"我。</strong>多数情况下模型没有跨对话记忆，"记得你"是因为应用把历史记录重新放进了上下文。<br>⚠️ <strong>误区二：窗口越大越好。</strong>窗口大不代表模型能均匀利用所有信息——中间内容容易被"忽略"（lost in the middle），重要信息应尽量放在开头或结尾。</div>
+
+<h2>使用边界</h2>
+<p>上下文窗口不是无限数据库：超出窗口的信息必须通过检索（RAG）或外部存储按需调入；此外窗口过大还会增加成本与延迟，"什么都塞进去"不是好策略。</p>
+
+<h2>自测问题</h2>
+<ol>
+  <li>模型回复"请提供更多信息"，最可能的原因是什么？（提示：相关信息不在上下文里）</li>
+  <li>系统提示、对话历史、检索资料、工具结果，哪一类最优先进入上下文？为什么？（提示：系统提示——它定义行为规则）</li>
+  <li>把重要内容放在长文档的开头还是中间？为什么？（提示：开头/结尾，避开"lost in the middle"）</li>
+</ol>
+
+<h2>参考来源</h2>
+<ul>
+  <li>Anthropic 官方文档：<em>Context Windows</em>，网址 <code>https://docs.anthropic.com/en/docs/build-with-claude/context-windows</code></li>
+  <li>论文：<em>Lost in the Middle: How Language Models Use Long Contexts</em>，arXiv 编号 2307.03172（上下文位置影响的实证研究）</li>
+  <li>Anthropic 官方工程博客：<em>Effective context engineering for AI agents</em>，可搜索"anthropic effective context engineering"</li>
+</ul>
 
 <h2>一句话记住</h2>
 <div class="mem">🎯 <strong>上下文 = 模型的"工作桌面"。</strong>桌面上没有的，模型就不知道；管理好这张桌面（上下文工程），比换更大的模型往往更重要。</div>
