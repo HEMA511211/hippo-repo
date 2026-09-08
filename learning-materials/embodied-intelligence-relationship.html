@@ -21,7 +21,7 @@
 </head>
 <body>
 <h1><span class="tag">概念关系</span>具身智能 × Agent × 上下文 × Skill</h1>
-<div class="summary"><strong>一句话摘要：</strong>具身智能是 Agent 理念从"数字世界"向"物理世界"的延伸——身体取代/扩展了工具集，物理环境取代了软件环境；而大模型的上下文与 Skill 机制，正是让这套物理闭环"听得懂、做得对、越用越熟"的三块基石。</div>
+<div class="summary"><strong>一句话摘要：</strong>具身智能是 Agent 理念从数字世界向物理世界的延伸——身体取代工具集，物理环境取代软件环境；上下文与 Skill 是让物理闭环"听得懂、做得对、越用越熟"的基石。</div>
 
 <h2>概念地图</h2>
 <div class="fig">
@@ -29,31 +29,24 @@
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L9,3 L0,6 Z" fill="#4a6fa5"/></marker>
   </defs>
-  <!-- 具身智能 中心 -->
   <rect x="250" y="40" width="180" height="56" rx="10" fill="#2c4a7c"/>
   <text x="340" y="63" text-anchor="middle" fill="#fff" font-size="17" font-weight="bold">具身智能</text>
   <text x="340" y="84" text-anchor="middle" fill="#cfe0f5" font-size="12">物理世界闭环</text>
-  <!-- Agent -->
   <rect x="30" y="160" width="150" height="52" rx="10" fill="#4a6fa5"/>
   <text x="105" y="182" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Agent</text>
   <text x="105" y="200" text-anchor="middle" fill="#dbe7f7" font-size="11">数字世界执行者</text>
-  <!-- 大模型 -->
   <rect x="265" y="160" width="150" height="52" rx="10" fill="#6a8fc0"/>
   <text x="340" y="182" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">大模型（LLM）</text>
   <text x="340" y="200" text-anchor="middle" fill="#e2ecf8" font-size="11">通用大脑</text>
-  <!-- 上下文 -->
   <rect x="500" y="160" width="150" height="52" rx="10" fill="#7ba3d0"/>
   <text x="575" y="182" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">LLM 上下文</text>
   <text x="575" y="200" text-anchor="middle" fill="#e9f1fa" font-size="11">工作桌面</text>
-  <!-- Skill -->
   <rect x="265" y="280" width="150" height="52" rx="10" fill="#8db08a"/>
   <text x="340" y="302" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">Skill</text>
   <text x="340" y="320" text-anchor="middle" fill="#e6f2e4" font-size="11">沉淀的方法论</text>
-  <!-- 身体/环境 -->
   <rect x="30" y="280" width="150" height="52" rx="10" fill="#b58e5a"/>
   <text x="105" y="302" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">身体 + 物理环境</text>
   <text x="105" y="320" text-anchor="middle" fill="#f5e8d5" font-size="11">传感器 / 执行器 / 反馈</text>
-  <!-- 边 -->
   <line x1="180" y1="186" x2="262" y2="186" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrow)"/>
   <text x="221" y="176" text-anchor="middle" fill="#555" font-size="11">理念延伸到物理世界</text>
   <line x1="340" y1="212" x2="340" y2="277" stroke="#4a6fa5" stroke-width="2" marker-end="url(#arrow)"/>
@@ -70,16 +63,16 @@
 <h2>三条关系主线</h2>
 <table>
   <tr><th>关系</th><th>说明</th></tr>
-  <tr><td>具身智能 ← Agent</td><td>Agent 的"感知—决策—行动"循环在数字世界运转（调用软件工具）；具身智能把同一循环搬进物理世界，工具变成了传感器与执行器。可以说：<strong>具身智能 = 住在身体里的 Agent</strong>。</td></tr>
-  <tr><td>大模型上下文 → 闭环质量</td><td>具身智能体的"大脑"仍是大模型，它依然只能利用上下文里的信息：传感器读数、任务指令、已执行步骤都要进入"工作桌面"。物理任务步骤多、耗时长，<strong>上下文管理的好坏直接决定机器人会不会"忘记"自己正在干什么</strong>。</td></tr>
-  <tr><td>Skill → 经验复用</td><td>机器人学会"叠毛巾"之后，最好把这套动作方法论沉淀为可复用的技能文档/策略包，而不是每次从零学起。Skill 机制正是这种"一次学会、处处调用"的知识沉淀方式——未来机器人的技能库，很可能就是具身版的 SKILL.md。</td></tr>
+  <tr><td>具身智能 ← Agent</td><td>同一"感知—决策—行动"循环：Agent 在数字世界调工具，具身智能在物理世界用身体。<strong>具身智能 = 住在身体里的 Agent</strong>。</td></tr>
+  <tr><td>大模型上下文 → 闭环质量</td><td>机器人的大脑仍是大模型，依然只能用上下文里的信息。物理任务步骤多耗时长，<strong>上下文管理差，机器人就会"忘了"自己在干什么</strong>。</td></tr>
+  <tr><td>Skill → 经验复用</td><td>学会"叠毛巾"后应把方法论沉淀为可复用的技能包，而非从零学起——未来机器人的技能库，很可能就是具身版的 SKILL.md。</td></tr>
 </table>
 
-<h2>一个完整场景串起四个概念</h2>
-<p>指令"把客厅收拾一下"下达给家用机器人：<strong>上下文</strong>里装着系统提示、指令与已完成的子步骤；<strong>大模型</strong>基于桌面上的信息规划"先捡玩具→再擦桌子"；每一步的传感器反馈写回上下文；如果"擦桌子"的方法曾沉淀为<strong>Skill</strong>，直接加载即可，不必重新规划；而整个系统作为<strong>具身 Agent</strong>，用手（执行器）在物理世界里完成闭环。四个概念各司其职，缺一则系统退化为"会聊天的摆设"。</p>
+<h2>一个场景串起四个概念</h2>
+<p>指令"把客厅收拾一下"：<strong>上下文</strong>装着指令与已完成的步骤；<strong>大模型</strong>据此规划"先捡玩具再擦桌子"；传感器反馈写回上下文；"擦桌子"若已有 <strong>Skill</strong> 直接加载；整个系统作为<strong>具身 Agent</strong> 在物理世界完成闭环。</p>
 
-<h2>个人理解与判断</h2>
-<p>我认为具身智能最大的启发不在"机器人变聪明了"，而是它反过来提醒我们：<strong>智能天然是长在"身体与环境"里的，纯数字智能只是智能的一个特例。</strong>对照本仓库前三个概念：Agent 教会我们"会做"的框架，上下文提醒我们"看见什么决定想出什么"，Skill 说明"沉淀让能力复利"——具身智能把这三条全部放进物理世界接受检验，也因此成为检验这三条理念是否真正成立的终极考场。</p>
+<h2>个人理解</h2>
+<p>具身智能最大的启发不是"机器人变聪明了"，而是反过来提醒我们：<strong>智能天然长在"身体与环境"里，纯数字智能只是特例。</strong>Agent 给框架、上下文定所见、Skill 供沉淀——具身智能把这三条放进物理世界接受检验，是它们是否真正成立的终极考场。</p>
 
 <h2>一句话记住</h2>
 <div class="mem">🎯 <strong>具身智能把 Agent 的闭环搬进物理世界；上下文是它的工作桌面，Skill 是它的肌肉记忆。</strong></div>
@@ -91,7 +84,7 @@
   <a href="embodied-intelligence-application.html">应用与上手路径</a>
   <a href="embodied-intelligence-relationship.html">概念关系图</a>
   <br>
-  相关概念：<a href="agent.html">Agent</a> · <a href="llm-context.html">LLM 上下文</a> · <a href="skill.html">Skill</a> · <a href="concept-relationship.md">三概念关系（文字版）</a>
+  相关概念：<a href="agent.html">Agent</a> · <a href="llm-context.html">LLM 上下文</a> · <a href="skill.html">Skill</a>
 </nav>
 </body>
 </html>

@@ -15,7 +15,6 @@
   .pitfall{background:#fdeeee;border:1px solid #e8a0a0}
   .tag{display:inline-block;background:#4a6fa5;color:#fff;font-size:.75em;border-radius:4px;padding:2px 8px;margin-right:6px;vertical-align:middle}
   .mem{background:#2c4a7c;color:#fff;border-radius:8px;padding:14px 18px;margin-top:2em;font-size:1.05em}
-  ol.steps li{margin:0.6em 0}
   nav{margin-top:2.5em;padding-top:1em;border-top:1px solid #ccc;font-size:.95em}
   nav a{color:#4a6fa5;margin-right:14px}
   code{background:#f0f2f5;padding:1px 6px;border-radius:4px;font-size:.92em}
@@ -23,64 +22,64 @@
 </head>
 <body>
 <h1><span class="tag">应用与实践</span>具身智能用在哪里、怎么上手</h1>
-<div class="summary"><strong>一句话摘要：</strong>具身智能的落地场景正在从"结构化工厂"走向"开放家庭"；对学习者而言，最现实的入口不是买机器人，而是先在仿真环境里把"感知—决策—行动"闭环跑起来。</div>
+<div class="summary"><strong>一句话摘要：</strong>落地正从"结构化工厂"走向"开放家庭"；对学习者，最现实的入口不是买机器人，而是在仿真环境里先跑通"感知—决策—行动"闭环。</div>
 
 <h2>学习目标</h2>
 <ul>
-  <li>能列举具身智能的三个典型落地场景及其对可靠性要求的差异</li>
-  <li>能描述开发一个具身智能任务的完整工作流（仿真→训练→部署）</li>
-  <li>能为自己设计一条零硬件成本的上手路线</li>
+  <li>列举三个落地场景及其可靠性要求差异</li>
+  <li>描述完整开发工作流（仿真→训练→部署）</li>
+  <li>设计一条零硬件成本的上手路线</li>
 </ul>
 
 <h2>核心问题</h2>
 <ul>
-  <li>为什么工厂里的机械臂早已普及，"通用机器人"却迟迟没来？</li>
-  <li>仿真里练好的本领，搬到真机为什么会"水土不服"？</li>
+  <li>工厂机械臂早已普及，"通用机器人"为何迟迟没来？</li>
+  <li>仿真里练好的本领，上真机为何"水土不服"？</li>
 </ul>
 
 <h2>典型应用场景</h2>
 <ul>
-  <li><strong>工业制造（已落地）</strong>：分拣、装配、质检。环境结构化、动作可预编程，对"智能"要求最低，是机器人最成熟的主场。</li>
-  <li><strong>仓储物流（快速扩张）</strong>：AGV/AMR 搬运、动态拣选。环境半结构化，需要实时感知与避障。</li>
-  <li><strong>家庭服务与养老照护（攻坚中）</strong>：整理、清洁、陪伴。环境完全开放、任务模糊、安全要求极高——这是具身智能"通用能力"的终极考场。</li>
-  <li><strong>自动驾驶（广义具身）</strong>：车辆就是"身体"，道路就是环境，是最早规模化落地的具身智能形态之一。</li>
+  <li><strong>工业制造（已落地）</strong>：分拣装配，环境结构化，智能要求最低</li>
+  <li><strong>仓储物流（扩张中）</strong>：AGV 搬运拣选，半结构化环境需实时避障</li>
+  <li><strong>家庭照护（攻坚中）</strong>：环境开放、任务模糊、安全要求极高——通用能力的终极考场</li>
+  <li><strong>自动驾驶</strong>：最早规模化的广义具身智能</li>
 </ul>
 
-<h2>开发工作流（以机械臂抓取任务为例）</h2>
-<ol class="steps">
-  <li><strong>定义任务与奖励</strong>：明确"抓起积木放进盒子"成功的判定条件。</li>
-  <li><strong>仿真环境搭建</strong>：在物理仿真器中建模机器人、物体与物理规则，零硬件成本试错。</li>
-  <li><strong>策略训练</strong>：用强化学习试错训练，或用 VLA 大模型直接生成动作指令，或用遥操作采集数据做模仿学习。</li>
-  <li><strong>Sim-to-Real 迁移</strong>：加入噪声与随机化（域随机化），让仿真中学到的策略经得起现实的不完美。</li>
-  <li><strong>真机部署与闭环迭代</strong>：小步部署、持续采集真实失败案例、回到训练环节修正。</li>
-</ol>
+<h2>开发工作流（机械臂抓取为例）</h2>
+<ul>
+  <li><strong>定义任务</strong>：明确成功判定条件</li>
+  <li><strong>仿真搭建</strong>：物理仿真器中零成本试错</li>
+  <li><strong>策略训练</strong>：强化学习试错 / VLA 大模型 / 遥操作模仿学习</li>
+  <li><strong>Sim-to-Real 迁移</strong>：域随机化，让策略经得起现实的不完美</li>
+  <li><strong>真机部署</strong>：小步上线，失败案例回流训练</li>
+</ul>
 
 <h2>生活化类比</h2>
-<div class="analogy">💭 <strong>类比：</strong>仿真训练像飞行员的模拟舱——可以先撞一万次"飞机"；域随机化像故意在训练时换不同的鞋、不同的场地打球，免得正式比赛换个球馆就不会打了（这正是 Sim-to-Real 差距的本质）。</div>
+<div class="analogy">💭 仿真训练像飞行模拟舱，可以先撞一万次"飞机"；域随机化像故意换鞋换场地练球，免得正式比赛换个球馆就不会打了。</div>
 
 <h2>例子：零硬件上手路线</h2>
-<div class="example">📝 <strong>例子：</strong>学生小王想入门，但买不起机械臂。他的路线：① 在电脑上安装机器人物理仿真环境（如 MuJoCo、PyBullet、Isaac Lab 等开源工具，请搜索官网获取最新版本）；② 跑通官方的"机械臂抓取"示例；③ 修改奖励函数观察行为变化，理解"目标如何塑造智能"；④ 有条件后再申请实验室真机验证。全程零采购成本，却覆盖了完整工作流。</div>
+<div class="example">📝 ① 电脑上装开源仿真环境（搜索 MuJoCo / PyBullet / NVIDIA Isaac Lab 官网）；② 跑通"机械臂抓取"示例；③ 修改奖励函数观察行为变化，理解"目标塑造智能"；④ 有条件再上真机。全程零采购，覆盖完整工作流。</div>
 
 <h2>使用边界</h2>
-<div class="pitfall">⚠️ 仿真成绩 ≠ 真实能力：仿真器物理永远比现实"干净"，迁移损失是常态而非意外。<br>⚠️ 演示视频 ≠ 可靠性：实验室一次性成功的演示与"一万次不出错"之间隔着数量级的差距，评估具身智能要看成功率统计而非惊艳片段。<br>⚠️ 通用性仍是目标而非现状：当前系统多数只擅长被训练过的任务族，"买一台机器人包揽全部家务"在可预见的期限内仍不现实。</div>
+<div class="pitfall">⚠️ 仿真成绩 ≠ 真实能力（迁移损失是常态）；⚠️ 演示视频 ≠ 可靠性（要看成功率统计而非惊艳片段）；⚠️ 通用性仍是目标而非现状——"机器人包揽家务"近期不现实。</div>
 
 <h2>自测问题</h2>
 <ol>
-  <li>为什么家庭场景比工厂场景难一个数量级？（提示：环境是否结构化、任务是否模糊、安全冗余要求）</li>
-  <li>域随机化解决的是什么问题？（提示：Sim-to-Real 差距）</li>
-  <li>评估一个具身智能系统，应该看什么指标？（提示：任务成功率与方差，而非单次演示）</li>
+  <li>家庭为何比工厂难一个数量级？（提示：开放环境、模糊任务、安全冗余）</li>
+  <li>域随机化解决什么问题？（提示：Sim-to-Real 差距）</li>
+  <li>评估具身系统看什么指标？（提示：成功率与方差）</li>
 </ol>
 
 <h2>参考来源</h2>
 <ul>
-  <li>论文：<em>RT-2: Vision-Language-Action Models Transfer Web Knowledge to Robotic Control</em>（Brohan 等，2023），arXiv 编号 2307.15818，<code>https://arxiv.org/abs/2307.15818</code>——端到端 VLA 工作流的代表（含 6000+ 次真机评估的方法学）</li>
-  <li>论文：<em>PaLM-E: An Embodied Multimodal Language Model</em>（Driess 等，2023），arXiv 编号 2303.03378，<code>https://arxiv.org/abs/2303.03378</code>——多模态感知接入大模型的参考实现</li>
-  <li>开源仿真工具：建议分别搜索"MuJoCo 官网""PyBullet quickstart""NVIDIA Isaac Lab"获取官方文档（版本迭代快，以官网为准，此处不固定 URL）</li>
-  <li>域随机化经典论文：建议搜索"Tobin domain randomization robots arXiv"（Domain Randomization for Transferring Deep Neural Networks from Simulation to the Real World）</li>
+  <li><em>RT-2</em>（Brohan 等，2023），arXiv 2307.15818，<code>https://arxiv.org/abs/2307.15818</code>——端到端 VLA 工作流（含 6000+ 次真机评估方法）</li>
+  <li><em>PaLM-E</em>（Driess 等，2023），arXiv 2303.03378，<code>https://arxiv.org/abs/2303.03378</code></li>
+  <li>仿真工具：搜索"MuJoCo 官网""PyBullet quickstart""NVIDIA Isaac Lab"（版本迭代快，以官网为准）</li>
+  <li>域随机化经典论文：搜索"Tobin domain randomization robots arXiv"</li>
 </ul>
 
 <h2>一句话记住</h2>
-<div class="mem">🎯 <strong>具身智能的入门公式：仿真环境（免费试错）+ 完整闭环（感知-决策-行动）+ 真实数据回流。</strong>身体可以虚拟，闭环不能省略。</div>
+<div class="mem">🎯 <strong>入门公式：仿真环境（免费试错）+ 完整闭环 + 真实数据回流。</strong>身体可以虚拟，闭环不能省略。</div>
 
 <nav>
   本概念系列：
